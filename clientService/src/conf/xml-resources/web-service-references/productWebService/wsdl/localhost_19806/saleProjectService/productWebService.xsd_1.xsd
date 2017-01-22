@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webService/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webService/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:19806/saleProjectService/productWebService?xsd=2"/>
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="ServletException" type="tns:ServletException"/>
+
+<xs:element name="addHistory" type="tns:addHistory"/>
+
+<xs:element name="addHistoryResponse" type="tns:addHistoryResponse"/>
+
+<xs:element name="addProduct" type="tns:addProduct"/>
+
+<xs:element name="addProductResponse" type="tns:addProductResponse"/>
+
+<xs:element name="catalogRetrieve" type="tns:catalogRetrieve"/>
+
+<xs:element name="catalogRetrieveResponse" type="tns:catalogRetrieveResponse"/>
+
+<xs:element name="deleteProduct" type="tns:deleteProduct"/>
+
+<xs:element name="deleteProductResponse" type="tns:deleteProductResponse"/>
+
+<xs:element name="editProduct" type="tns:editProduct"/>
+
+<xs:element name="editProductResponse" type="tns:editProductResponse"/>
+
+<xs:element name="getAllProductByUserID" type="tns:getAllProductByUserID"/>
+
+<xs:element name="getAllProductByUserIDResponse" type="tns:getAllProductByUserIDResponse"/>
+
+<xs:element name="getLikesCount" type="tns:getLikesCount"/>
+
+<xs:element name="getLikesCountResponse" type="tns:getLikesCountResponse"/>
+
+<xs:element name="getPurchasesCount" type="tns:getPurchasesCount"/>
+
+<xs:element name="getPurchasesCountResponse" type="tns:getPurchasesCountResponse"/>
+
+<xs:element name="getSalesProductByUserID" type="tns:getSalesProductByUserID"/>
+
+<xs:element name="getSalesProductByUserIDResponse" type="tns:getSalesProductByUserIDResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="isLike" type="tns:isLike"/>
+
+<xs:element name="isLikeResponse" type="tns:isLikeResponse"/>
+
+<xs:element name="likeButton" type="tns:likeButton"/>
+
+<xs:element name="likeButtonResponse" type="tns:likeButtonResponse"/>
+
+<xs:element name="productRetrieve" type="tns:productRetrieve"/>
+
+<xs:element name="productRetrieveResponse" type="tns:productRetrieveResponse"/>
+
+<xs:element name="purchaseRetrieve" type="tns:purchaseRetrieve"/>
+
+<xs:element name="purchaseRetrieveResponse" type="tns:purchaseRetrieveResponse"/>
+
+<xs:element name="showHistory" type="tns:showHistory"/>
+
+<xs:element name="showHistoryResponse" type="tns:showHistoryResponse"/>
+
+<xs:element name="sumBuy" type="tns:sumBuy"/>
+
+<xs:element name="sumBuyResponse" type="tns:sumBuyResponse"/>
+
+<xs:element name="sumLike" type="tns:sumLike"/>
+
+<xs:element name="sumLikeResponse" type="tns:sumLikeResponse"/>
+
+<xs:element name="unlikeButton" type="tns:unlikeButton"/>
+
+<xs:element name="unlikeButtonResponse" type="tns:unlikeButtonResponse"/>
+
+<xs:complexType name="getPurchasesCount">
+<xs:sequence>
+<xs:element name="product_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesCountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProduct">
+<xs:sequence>
+<xs:element name="userID" type="xs:int"/>
+<xs:element name="prodname" type="xs:string" minOccurs="0"/>
+<xs:element name="prodprice" type="xs:int"/>
+<xs:element name="proddesc" type="xs:string" minOccurs="0"/>
+<xs:element name="prodpic" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="purchaseRetrieve">
+<xs:sequence>
+<xs:element name="userID" type="xs:string" minOccurs="0"/>
+<xs:element name="idp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="purchaseRetrieveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isLike">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="isLikeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLikesCount">
+<xs:sequence>
+<xs:element name="product_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLikesCountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editProduct">
+<xs:sequence>
+<xs:element name="prodID" type="xs:int"/>
+<xs:element name="prodname" type="xs:string" minOccurs="0"/>
+<xs:element name="prodprice" type="xs:int"/>
+<xs:element name="proddesc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productRetrieve">
+<xs:sequence>
+<xs:element name="id_prod" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productRetrieveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addHistory">
+<xs:sequence>
+<xs:element name="idp" type="xs:string" minOccurs="0"/>
+<xs:element name="qty" type="xs:string" minOccurs="0"/>
+<xs:element name="uBuy" type="xs:string" minOccurs="0"/>
+<xs:element name="rcvn" type="xs:string" minOccurs="0"/>
+<xs:element name="rcvadd" type="xs:string" minOccurs="0"/>
+<xs:element name="rcvc" type="xs:string" minOccurs="0"/>
+<xs:element name="rcvpo" type="xs:string" minOccurs="0"/>
+<xs:element name="rcvph" type="xs:string" minOccurs="0"/>
+<xs:element name="crecard" type="xs:string" minOccurs="0"/>
+<xs:element name="creval" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addHistoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="likeButton">
+<xs:sequence>
+<xs:element name="idu" type="xs:string" minOccurs="0"/>
+<xs:element name="idp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="likeButtonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showHistory">
+<xs:sequence>
+<xs:element name="idu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showHistoryResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumLike">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumLikeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumBuy">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumBuyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSalesProductByUserID">
+<xs:sequence>
+<xs:element name="uid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSalesProductByUserIDResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="catalogRetrieve">
+<xs:sequence>
+<xs:element name="userID" type="xs:string" minOccurs="0"/>
+<xs:element name="keyword" type="xs:string" minOccurs="0"/>
+<xs:element name="category" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="catalogRetrieveResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ServletException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="rootCause" type="tns:throwable" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProductByUserID">
+<xs:sequence>
+<xs:element name="uid" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProductByUserIDResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unlikeButton">
+<xs:sequence>
+<xs:element name="idu" type="xs:string" minOccurs="0"/>
+<xs:element name="idp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unlikeButtonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteProduct">
+<xs:sequence>
+<xs:element name="idproduct" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteProductResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
